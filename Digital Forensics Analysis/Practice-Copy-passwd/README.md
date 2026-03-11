@@ -180,8 +180,8 @@ ls -lah /root/forensics/
 
 ```bash
 # Expected output — hashes must match exactly
-d41d8cd98f00b204e9800998ecf8427e  /etc/passwd
-d41d8cd98f00b204e9800998ecf8427e  /root/forensics/passwd.copy
+e55b2a8ca4ffb8b317f28795e255f270c3339e8d0172b92bae9b4430c3c36597  /etc/passwd
+e55b2a8ca4ffb8b317f28795e255f270c3339e8d0172b92bae9b4430c3c36597 /root/forensics/passwd.copy
 ```
 
 A matching hash confirms:
@@ -372,8 +372,8 @@ ls -lah /root/forensics/
 
 ```bash
 # Salida esperada — los hashes deben coincidir exactamente
-d41d8cd98f00b204e9800998ecf8427e  /etc/passwd
-d41d8cd98f00b204e9800998ecf8427e  /root/forensics/passwd.copy
+e55b2a8ca4ffb8b317f28795e255f270c3339e8d0172b92bae9b4430c3c36597  /etc/passwd
+e55b2a8ca4ffb8b317f28795e255f270c3339e8d0172b92bae9b4430c3c36597  /root/forensics/passwd.copy
 ```
 
 Un hash coincidente confirma:
