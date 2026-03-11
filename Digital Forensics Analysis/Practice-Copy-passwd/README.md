@@ -214,6 +214,7 @@ A matching hash confirms:
 - Evidence stored in a **dedicated, isolated directory**
 - Hashes generated **both before and after** the copy
 
+Link to project documentation: https://docs.google.com/document/d/1qOJQjFxvyNIieEZUSuJr9-Z6Y1n2gS91TY3lPRYY544/edit?usp=sharing
 ---
 ---
 
@@ -397,6 +398,7 @@ Un hash coincidente confirma:
 > [!NOTE]
 > **`/etc/passwd`** — Archivo Linux con información de cuentas: usuario, UID, GID, directorio home y shell.
 
+Link al documento del proyecto: https://docs.google.com/document/d/1qOJQjFxvyNIieEZUSuJr9-Z6Y1n2gS91TY3lPRYY544/edit?usp=sharing
 ---
 
 ### ⚠️ Consideraciones
