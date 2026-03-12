@@ -229,6 +229,8 @@ A complete governance plan must include:
 - Risk management must be treated as a **continuous process**, not a one-time activity
 - All governance documents must be **reviewed annually** at minimum
 
+Link to project documentation:
+https://docs.google.com/document/d/1jHQ51InlQgi3HbvkGzatg9DQOSp3mQnQ8FkIHwxGC30/edit?usp=sharing
 ---
 ---
 
@@ -436,6 +438,8 @@ Un plan de gobierno completo debe incluir:
 - La gestión de riesgos debe tratarse como un **proceso continuo**, no como una actividad puntual
 - Todos los documentos de gobierno deben revisarse **como mínimo una vez al año**
 
+Link al documento del proyecto:
+https://docs.google.com/document/d/1jHQ51InlQgi3HbvkGzatg9DQOSp3mQnQ8FkIHwxGC30/edit?usp=sharing
 ---
 
 <div align="center">
