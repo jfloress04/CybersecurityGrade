@@ -230,7 +230,7 @@ A complete governance plan must include:
 - All governance documents must be **reviewed annually** at minimum
 
 Link to project documentation:
-https://docs.google.com/document/d/1jHQ51InlQgi3HbvkGzatg9DQOSp3mQnQ8FkIHwxGC30/edit?usp=sharing
+[https://docs.google.com/document/d/1jHQ51InlQgi3HbvkGzatg9DQOSp3mQnQ8FkIHwxGC30/edit?usp=sharing](https://docs.google.com/document/d/1tevHvY4-WxVcC43PaF4IaI2VdBFcG_Fz1M122V-k76U/edit?usp=sharing)
 ---
 ---
 
@@ -439,7 +439,7 @@ Un plan de gobierno completo debe incluir:
 - Todos los documentos de gobierno deben revisarse **como mínimo una vez al año**
 
 Link al documento del proyecto:
-https://docs.google.com/document/d/1jHQ51InlQgi3HbvkGzatg9DQOSp3mQnQ8FkIHwxGC30/edit?usp=sharing
+[https://docs.google.com/document/d/1jHQ51InlQgi3HbvkGzatg9DQOSp3mQnQ8FkIHwxGC30/edit?usp=sharing](https://docs.google.com/document/d/1tevHvY4-WxVcC43PaF4IaI2VdBFcG_Fz1M122V-k76U/edit?usp=sharing)
 ---
 
 <div align="center">
