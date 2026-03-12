@@ -180,8 +180,8 @@ ls -lah /root/forensics/
 
 ```bash
 # Expected output — hashes must match exactly
-d41d8cd98f00b204e9800998ecf8427e  /etc/passwd
-d41d8cd98f00b204e9800998ecf8427e  /root/forensics/passwd.copy
+e55b2a8ca4ffb8b317f28795e255f270c3339e8d0172b92bae9b4430c3c36597  /etc/passwd
+e55b2a8ca4ffb8b317f28795e255f270c3339e8d0172b92bae9b4430c3c36597 /root/forensics/passwd.copy
 ```
 
 A matching hash confirms:
@@ -214,6 +214,7 @@ A matching hash confirms:
 - Evidence stored in a **dedicated, isolated directory**
 - Hashes generated **both before and after** the copy
 
+Link to project documentation: https://docs.google.com/document/d/1qOJQjFxvyNIieEZUSuJr9-Z6Y1n2gS91TY3lPRYY544/edit?usp=sharing
 ---
 ---
 
@@ -372,8 +373,8 @@ ls -lah /root/forensics/
 
 ```bash
 # Salida esperada — los hashes deben coincidir exactamente
-d41d8cd98f00b204e9800998ecf8427e  /etc/passwd
-d41d8cd98f00b204e9800998ecf8427e  /root/forensics/passwd.copy
+e55b2a8ca4ffb8b317f28795e255f270c3339e8d0172b92bae9b4430c3c36597  /etc/passwd
+e55b2a8ca4ffb8b317f28795e255f270c3339e8d0172b92bae9b4430c3c36597  /root/forensics/passwd.copy
 ```
 
 Un hash coincidente confirma:
@@ -397,6 +398,7 @@ Un hash coincidente confirma:
 > [!NOTE]
 > **`/etc/passwd`** — Archivo Linux con información de cuentas: usuario, UID, GID, directorio home y shell.
 
+Link al documento del proyecto: https://docs.google.com/document/d/1qOJQjFxvyNIieEZUSuJr9-Z6Y1n2gS91TY3lPRYY544/edit?usp=sharing
 ---
 
 ### ⚠️ Consideraciones
