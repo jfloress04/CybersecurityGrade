@@ -1,891 +1,830 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,100:00ff88&height=300&section=header&text=TAREA%202%20-%20TEMA%201%20-%20Bastionado%20Linux&fontSize=40&fontColor=00ff88&desc=Hardening%20de%20Sistemas%20Linux%20para%20Ciberseguridad&descSize=16&descAlign=3&descAlignY=55" alt="Header" />
-
 <div align="center">
 
-[![Linux](https://img.shields.io/badge/OS-Linux%20Hardening-00ff88?style=for-the-badge&logo=linux)](.)
-[![Security](https://img.shields.io/badge/Category-System%20Security-00ff88?style=for-the-badge&logo=shield)](.)
-[![Master's](https://img.shields.io/badge/Level-Master's%20Studies-0d1117?style=for-the-badge&logo=graduation-cap)](.)
-[![Status](https://img.shields.io/badge/Status-Complete-00ff88?style=for-the-badge&logo=checkmark)](.)
+<!-- BANNER VISUAL -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a1f2e,100:00ff88&height=200&section=header&text=Linux%20Hardening%20/%20Bastionado%20Linux&fontSize=34&fontColor=00ff88&fontAlignY=38&desc=Hardening%20de%20Sistemas%20Linux%20para%20Ciberseguridad&descAlignY=58&descSize=16&descColor=8b949e" width="100%"/>
 
-[![Tools](https://img.shields.io/badge/Tools-SSH%20|%20UFW%20|%20Lynis%20|%20AIDE-0d1117?style=for-the-badge)](.)
-[![Language](https://img.shields.io/badge/Language-ES%20%7C%20EN-00ff88?style=for-the-badge)](.)
+<!-- LANGUAGE TOGGLE -->
+<a href="#english-version">
+  <img src="https://img.shields.io/badge/🇬🇧_English-Read%20in%20English-0d6efd?style=for-the-badge&labelColor=0d1117"/>
+</a>
+&nbsp;
+<a href="#version-espanol">
+  <img src="https://img.shields.io/badge/🇪🇸_Español-Leer%20en%20Español-dc3545?style=for-the-badge&labelColor=0d1117"/>
+</a>
 
----
+<br/><br/>
 
-<a href="#english">🇬🇧 English</a> | <a href="#español">🇪🇸 Español</a>
-
----
+<!-- BADGES -->
+![Platform](https://img.shields.io/badge/Domain-System%20Security-557C94?style=flat-square&logo=linux&logoColor=white)
+![Category](https://img.shields.io/badge/Category-Linux%20Hardening-00ff88?style=flat-square&logo=shieldsdotio&logoColor=black)
+![Status](https://img.shields.io/badge/Status-Completed-success?style=flat-square)
+![Framework](https://img.shields.io/badge/Framework-SSH%20%7C%20UFW%20%7C%20AIDE%20%7C%20Lynis-blueviolet?style=flat-square&logo=bookstack&logoColor=white)
+![Lang](https://img.shields.io/badge/Lang-EN%20%7C%20ES-orange?style=flat-square)
 
 </div>
 
 ---
 
-<h2 id="español">🔒 TAREA 2 - TEMA 1: Bastionado de Sistema Linux</h2>
+<!-- ============================================================ -->
+<!--                     ENGLISH VERSION                          -->
+<!-- ============================================================ -->
 
-Documentación completa sobre las medidas de hardening (bastionado) aplicadas a un sistema Linux para incrementar su seguridad y resistencia frente a amenazas. Esta tarea cubre desde la gestión de usuarios hasta herramientas avanzadas de auditoría y monitoreo.
+<a name="english-version"></a>
 
-### 🎯 Objetivos
+<div align="center">
+<h1>🔒 Task 2 — Topic 1: Linux System Hardening</h1>
+<p><i>Hardening of Linux Systems Following Security Hardening Policy Guidelines</i></p>
+</div>
 
-- [x] Aplicar medidas de bastionado en sistemas Linux
-- [x] Configurar gestión segura de usuarios y contraseñas
-- [x] Asegurar la conexión SSH con claves criptográficas
-- [x] Implementar actualizaciones automáticas de seguridad
-- [x] Configurar un cortafuegos robusto con UFW
-- [x] Implementar políticas de contraseñas con libpam-pwquality
-- [x] Monitorear integridad de ficheros con AIDE
-- [x] Desactivar servicios y módulos innecesarios
-- [x] Auditar seguridad con Lynis
+### 📋 Overview
 
----
-
-## 📁 Estructura del Repositorio
-
-```
-TAREA-2-TEMA-1-Bastionado-Linux/
-├── 📄 README.md
-├── 📂 1-Introduccion/
-│   ├── introduccion_bastionado.md
-│   ├── conceptos_clave.md
-│   └── importancia_hardening.md
-├── 📂 2-Gestion-Usuarios-Contrasenas/
-│   ├── gestion_usuarios.md
-│   ├── politica_contrasenas.md
-│   ├── scripts_usuarios.sh
-│   └── audit_usuarios.md
-├── 📂 3-Configuracion-SSH/
-│   ├── ssh_hardening.md
-│   ├── sshd_config_seguro
-│   ├── generacion_claves.md
-│   ├── desactivar_root_login.md
-│   └── ssh_banner.txt
-├── 📂 4-Actualizaciones-Automaticas/
-│   ├── actualizaciones_automaticas.md
-│   ├── unattended_upgrades.md
-│   ├── configuracion_apt.md
-│   └── monitoreo_actualizaciones.sh
-├── 📂 5-Cortafuegos-UFW/
-│   ├── ufw_configuracion.md
-│   ├── reglas_ufw.sh
-│   ├── perfiles_ufw.md
-│   ├── logging_ufw.md
-│   └── ufw_advanced.md
-├── 📂 6-PAM-PWQuality/
-│   ├── pam_pwquality_setup.md
-│   ├── common_password_config
-│   ├── requisitos_contrasena.md
-│   ├── testing_policies.sh
-│   └── audit_password_policy.md
-├── 📂 7-AIDE/
-│   ├── aide_instalacion.md
-│   ├── aide_config_basico
-│   ├── aide_config_avanzado
-│   ├── inicializacion_bd.sh
-│   ├── verificacion_integridad.sh
-│   └── alertas_aide.md
-├── 📂 8-Desactivacion-Servicios/
-│   ├── servicios_innecesarios.md
-│   ├── modulos_kernel_desactivar.md
-│   ├── desactivar_servicios.sh
-│   ├── auditoria_servicios.md
-│   └── impacto_rendimiento.md
-├── 📂 9-Lynis/
-│   ├── lynis_guia_completa.md
-│   ├── lynis_instalacion.sh
-│   ├── lynis_ejecucion.md
-│   ├── interpretacion_resultados.md
-│   ├── lynis_hardening_index.md
-│   └── reporte_lynis_ejemplo.txt
-├── 📂 10-Scripts-Automatizacion/
-│   ├── hardening_completo.sh
-│   ├── verificacion_seguridad.sh
-│   ├── monitoreo_contino.sh
-│   ├── backup_configuracion.sh
-│   └── rollback_cambios.sh
-├── 📂 11-Testing-Validacion/
-│   ├── pruebas_seguridad.md
-│   ├── test_ssh_security.sh
-│   ├── test_firewall.sh
-│   ├── test_password_policy.sh
-│   ├── nmap_port_scan.sh
-│   └── resultados_testing.md
-└── 📂 12-Conclusiones-Aprendizajes/
-    ├── conclusiones.md
-    ├── lecciones_aprendidas.md
-    ├── mejoras_futuras.md
-    ├── referencias_completas.md
-    └── glosario_terminos.md
-```
+> **Linux System Hardening** is a comprehensive set of security measures applied to Linux operating systems to increase their resilience against cyber threats and unauthorised access. In an accelerating digital landscape, securing the infrastructure layer is paramount for any organisation handling sensitive data or critical services. This practical exercise covers the implementation of industry-standard hardening techniques aligned with security best practices and regulatory compliance frameworks.
 
 ---
 
-## 📚 Medidas de Bastionado Detalladas
-
-### <details>
-<summary><strong>1. Gestión de Usuarios y Contraseñas</strong></summary>
-
-**Objetivo:** Implementar controles de acceso basados en principios de menor privilegio.
-
-**Contenidos:**
-- Principio de menor privilegio (Least Privilege)
-- Creación y eliminación segura de usuarios
-- Asignación de grupos y permisos
-- Auditoría de usuarios del sistema
-- Desactivación de cuentas de usuario innecesarias
-- Configuración de sudo con restricciones
-- Monitoreo de accesos administrativos
-- Gestión de permisos de ficheros (/etc/passwd, /etc/shadow)
-
-**Ficheros Generados:**
-- `gestion_usuarios.md` - Guía completa de gestión de usuarios
-- `politica_contrasenas.md` - Política de contraseñas robusto
-- `scripts_usuarios.sh` - Script de automatización para gestión
-- `audit_usuarios.md` - Auditoria y verificación
-
-**Herramientas:** useradd, userdel, usermod, sudo, lastlog, w
-
-</details>
-
-### <details>
-<summary><strong>2. Configuración Segura de SSH</strong></summary>
-
-**Objetivo:** Asegurar el acceso remoto mediante SSH con criptografía robusta.
-
-**Contenidos:**
-- Cambio de puerto SSH (no estándar)
-- Desactivación de login como root
-- Autenticación por clave pública/privada
-- Desactivación de autenticación por contraseña
-- Configuración de timeout de sesión
-- Restricción de usuarios permitidos
-- Configuración de banner de seguridad
-- Encriptación fuerte de conexiones
-- Monitoreo de intentos de acceso fallidos
-- Fail2ban para prevención de ataques de fuerza bruta
-
-**Ficheros Generados:**
-- `ssh_hardening.md` - Guía de hardening SSH
-- `sshd_config_seguro` - Fichero de configuración SSH optimizado
-- `generacion_claves.md` - Procedimiento de generación de claves
-- `desactivar_root_login.md` - Seguridad de cuenta root
-- `ssh_banner.txt` - Banner de seguridad personalizado
-
-**Herramientas:** SSH, ssh-keygen, sshd_config, ssh-copy-id, Fail2ban
-
-</details>
-
-### <details>
-<summary><strong>3. Actualizaciones Automáticas de Seguridad</strong></summary>
-
-**Objetivo:** Mantener el sistema actualizado automáticamente contra vulnerabilidades conocidas.
-
-**Contenidos:**
-- Configuración de unattended-upgrades
-- Actualizaciones automáticas de kernel
-- Configuración de repositorios de seguridad
-- Notificaciones de actualizaciones
-- Reboots automáticos seguros
-- Rollback de actualizaciones problemáticas
-- Auditoría de cambios instalados
-- Gestión de dependencias
-- Planificación de ventanas de mantenimiento
-
-**Ficheros Generados:**
-- `actualizaciones_automaticas.md` - Guía de configuración
-- `unattended_upgrades.md` - Configuración detallada
-- `configuracion_apt.md` - Gestión de paquetes APT
-- `monitoreo_actualizaciones.sh` - Script de monitoreo
-
-**Herramientas:** apt, unattended-upgrades, apt-listchanges, needrestart
-
-</details>
-
-### <details>
-<summary><strong>4. Configuración del Cortafuegos (UFW)</strong></summary>
-
-**Objetivo:** Controlar el tráfico de red permitido y denegado.
-
-**Contenidos:**
-- Instalación y habilitación de UFW
-- Política por defecto (DENY incoming, ALLOW outgoing)
-- Apertura selectiva de puertos
-- Reglas para aplicaciones específicas
-- Reglas stateful y stateless
-- Logging y monitoreo de UFW
-- Perfiles de aplicación predefinidos
-- Reglas basadas en direcciones IP
-- IPv6 hardening
-- Integración con fail2ban
-
-**Ficheros Generados:**
-- `ufw_configuracion.md` - Guía completa de UFW
-- `reglas_ufw.sh` - Script de aplicación de reglas
-- `perfiles_ufw.md` - Perfiles predefinidos
-- `logging_ufw.md` - Configuración de logging
-- `ufw_advanced.md` - Configuración avanzada
-
-**Herramientas:** UFW (Uncomplicated Firewall), iptables, ufw
-
-</details>
-
-### <details>
-<summary><strong>5. Políticas de Contraseñas con libpam-pwquality</strong></summary>
-
-**Objetivo:** Enforcer contraseñas fuertes y políticas de complejidad.
-
-**Contenidos:**
-- Instalación de libpam-pwquality
-- Requisitos mínimos de contraseña
-- Complejidad (mayúsculas, minúsculas, números, símbolos)
-- Longitud mínima y máxima
-- Reutilización de contraseñas bloqueada
-- Validación en tiempo real
-- Mensajes de error informativos
-- Excepción para usuarios privilegiados
-- Auditoría de cambios de contraseña
-- Testing de políticas
-
-**Ficheros Generados:**
-- `pam_pwquality_setup.md` - Guía de instalación
-- `common_password_config` - Fichero de configuración
-- `requisitos_contrasena.md` - Especificaciones de requisitos
-- `testing_policies.sh` - Script de validación
-- `audit_password_policy.md` - Auditoría de cumplimiento
-
-**Herramientas:** libpam-pwquality, PAM, passwd, chpasswd
-
-</details>
-
-### <details>
-<summary><strong>6. Monitoreo de Integridad con AIDE</strong></summary>
-
-**Objetivo:** Detectar cambios no autorizados en ficheros del sistema.
-
-**Contenidos:**
-- Instalación y configuración de AIDE
-- Creación de base de datos inicial
-- Definición de ficheros a monitorear
-- Verificación periódica de integridad
-- Generación de reportes de cambios
-- Alertas automáticas ante cambios
-- Configuración de exclusiones
-- Optimización de rendimiento
-- Integración con sistemas de logging
-- Respuesta ante detección de cambios
-
-**Ficheros Generados:**
-- `aide_instalacion.md` - Guía de instalación
-- `aide_config_basico` - Configuración básica
-- `aide_config_avanzado` - Configuración avanzada
-- `inicializacion_bd.sh` - Script de inicialización
-- `verificacion_integridad.sh` - Script de verificación
-- `alertas_aide.md` - Sistema de alertas
-
-**Herramientas:** AIDE (Advanced Intrusion Detection Environment), cron, systemd
-
-</details>
-
-### <details>
-<summary><strong>7. Desactivación de Módulos y Servicios Innecesarios</strong></summary>
-
-**Objetivo:** Reducir la superficie de ataque eliminando componentes no necesarios.
-
-**Contenidos:**
-- Auditoría de servicios en ejecución
-- Identificación de servicios innecesarios
-- Desactivación segura de servicios
-- Desactivación de módulos del kernel
-- Desactivación de daemons legacy
-- Impacto en funcionalidad
-- Documentación de cambios
-- Rollback de cambios
-- Monitoreo post-cambios
-- Verificación de dependencias
-
-**Ficheros Generados:**
-- `servicios_innecesarios.md` - Listado y análisis
-- `modulos_kernel_desactivar.md` - Módulos del kernel
-- `desactivar_servicios.sh` - Script de automatización
-- `auditoria_servicios.md` - Auditoría completa
-- `impacto_rendimiento.md` - Análisis de impacto
-
-**Herramientas:** systemctl, modprobe, lsmod, service, chkconfig
-
-</details>
-
-### <details>
-<summary><strong>8. Auditoría de Seguridad con Lynis</strong></summary>
-
-**Objetivo:** Realizar auditoría exhaustiva de seguridad del sistema.
-
-**Contenidos:**
-- Instalación de Lynis
-- Ejecución de auditorías completas
-- Interpretación de resultados y scoring
-- Hardening Index
-- Sugerencias de mejora
-- Generación de reportes detallados
-- Ejecución programada de auditorías
-- Comparación de resultados en el tiempo
-- Identificación de debilidades críticas
-- Tracking de cumplimiento de estándares
-
-**Ficheros Generados:**
-- `lynis_guia_completa.md` - Guía detallada
-- `lynis_instalacion.sh` - Script de instalación
-- `lynis_ejecucion.md` - Procedimiento de ejecución
-- `interpretacion_resultados.md` - Análisis de resultados
-- `lynis_hardening_index.md` - Métricas de hardening
-- `reporte_lynis_ejemplo.txt` - Reporte de ejemplo
-
-**Herramientas:** Lynis, bash, cron, grep, awk
-
-</details>
-
----
-
-## 🔧 Scripts de Automatización
-
-> [!NOTE]
-> Se incluyen scripts bash para automatizar el proceso completo de bastionado.
-
-### Scripts Principales:
-
-| Script | Función | Descripción |
-|--------|---------|-------------|
-| `hardening_completo.sh` | Automatización total | Aplica todas las medidas en secuencia |
-| `verificacion_seguridad.sh` | Validación | Verifica el estado de seguridad actual |
-| `monitoreo_contino.sh` | Monitoreo | Monitorea comportamientos anómalos |
-| `backup_configuracion.sh` | Respaldo | Realiza backup antes de cambios |
-| `rollback_cambios.sh` | Recuperación | Revierte cambios si es necesario |
-
----
-
-## ✅ Medidas de Hardening Aplicadas - Resumen
-
-| Medida | Implementado | Prioridad | Verificado |
-|--------|:-------------:|:---------:|:----------:|
-| Gestión de usuarios | ✅ | CRÍTICA | ✅ |
-| SSH hardening | ✅ | CRÍTICA | ✅ |
-| Actualizaciones automáticas | ✅ | ALTA | ✅ |
-| UFW cortafuegos | ✅ | CRÍTICA | ✅ |
-| PAM PWQuality | ✅ | ALTA | ✅ |
-| AIDE integridad | ✅ | MEDIA | ✅ |
-| Desactivar servicios | ✅ | MEDIA | ✅ |
-| Lynis auditoría | ✅ | MEDIA | ✅ |
-
----
-
-## > [!IMPORTANT]
-> **Antes de aplicar cambios en producción:**
-> - Realizar backup completo del sistema
-> - Documentar configuración actual
-> - Testear en entorno de staging
-> - Tener acceso físico o consola de recuperación
-> - Planificar ventana de mantenimiento
-> - Verificar no bloquear acceso administrativo
-
----
-
-## 🔗 Herramientas y Recursos Utilizados
-
-> [!NOTE]
-> Listado de herramientas y fuentes de referencia para profundizar.
-
-| Herramienta | Categoría | Descripción |
-|-------------|-----------|-------------|
-| **SSH** | Acceso Remoto | Protocolo seguro de acceso remoto |
-| **UFW** | Cortafuegos | Firewall simplificado para Linux |
-| **PAM** | Autenticación | Pluggable Authentication Modules |
-| **AIDE** | Integridad | Advanced Intrusion Detection |
-| **Lynis** | Auditoría | Herramienta de auditoría de seguridad |
-| **Fail2ban** | Prevención | Prevención de ataques de fuerza bruta |
-| **unattended-upgrades** | Actualizaciones | Gestor de actualizaciones automáticas |
-| **Auditd** | Logging | Framework de auditoría del kernel |
-
----
-
-## 💡 Competencias Desarrolladas
-
-```
-✓ Hardening de sistemas Linux
-✓ Configuración segura de SSH
-✓ Gestión de cortafuegos (UFW)
-✓ Políticas de contraseñas
-✓ Monitoreo de integridad de ficheros
-✓ Automatización de seguridad
-✓ Auditoría de sistemas
-✓ Scripting bash para seguridad
-✓ Identificación de vulnerabilidades
-✓ Análisis de riesgo y mitigación
-```
-
----
-
-## 📊 Niveles de Hardening Alcanzados
-
-```
-Básico (Nivel 1)
-├── Actualizaciones del sistema
-├── Cambio de contraseña por defecto
-└── Habilitación de firewall
-
-Intermedio (Nivel 2)
-├── SSH configurado
-├── Usuarios adicionales sin privilegios
-├── Servicios innecesarios desactivados
-└── Políticas de contraseña
-
-Avanzado (Nivel 3)
-├── Monitoreo de integridad (AIDE)
-├── Auditd configurado
-├── Fail2ban implementado
-├── Actualizaciones automáticas
-└── Auditoría con Lynis ✅ ALCANZADO
-```
-
----
-
-<h2 id="english">🔒 TASK 2 - TOPIC 1: Linux System Hardening</h2>
-
-Complete documentation on hardening measures applied to a Linux system to increase its security and resilience against threats. This task covers everything from user management to advanced auditing and monitoring tools.
-
-### 🎯 Objectives
-
-- [x] Apply hardening measures in Linux systems
-- [x] Configure secure user and password management
-- [x] Secure remote access using SSH with cryptography
-- [x] Implement automatic security updates
-- [x] Configure a robust firewall with UFW
-- [x] Implement password policies with libpam-pwquality
-- [x] Monitor file integrity with AIDE
-- [x] Disable unnecessary services and modules
-- [x] Audit security with Lynis
-
----
-
-## 📁 Repository Structure
-
-```
-TASK-2-TOPIC-1-Linux-Hardening/
-├── 📄 README.md
-├── 📂 1-Introduction/
-│   ├── introduction_hardening.md
-│   ├── key_concepts.md
-│   └── importance_hardening.md
-├── 📂 2-User-Password-Management/
-│   ├── user_management.md
-│   ├── password_policy.md
-│   ├── users_scripts.sh
-│   └── users_audit.md
-├── 📂 3-SSH-Configuration/
-│   ├── ssh_hardening.md
-│   ├── sshd_config_secure
-│   ├── key_generation.md
-│   ├── disable_root_login.md
-│   └── ssh_banner.txt
-├── 📂 4-Automatic-Updates/
-│   ├── automatic_updates.md
-│   ├── unattended_upgrades.md
-│   ├── apt_configuration.md
-│   └── updates_monitoring.sh
-├── 📂 5-Firewall-UFW/
-│   ├── ufw_configuration.md
-│   ├── ufw_rules.sh
-│   ├── ufw_profiles.md
-│   ├── ufw_logging.md
-│   └── ufw_advanced.md
-├── 📂 6-PAM-PWQuality/
-│   ├── pam_pwquality_setup.md
-│   ├── common_password_config
-│   ├── password_requirements.md
-│   ├── testing_policies.sh
-│   └── audit_password_policy.md
-├── 📂 7-AIDE/
-│   ├── aide_installation.md
-│   ├── aide_config_basic
-│   ├── aide_config_advanced
-│   ├── initialize_db.sh
-│   ├── verify_integrity.sh
-│   └── aide_alerts.md
-├── 📂 8-Disable-Services/
-│   ├── unnecessary_services.md
-│   ├── kernel_modules_disable.md
-│   ├── disable_services.sh
-│   ├── services_audit.md
-│   └── performance_impact.md
-├── 📂 9-Lynis/
-│   ├── lynis_complete_guide.md
-│   ├── lynis_installation.sh
-│   ├── lynis_execution.md
-│   ├── results_interpretation.md
-│   ├── lynis_hardening_index.md
-│   └── lynis_report_example.txt
-├── 📂 10-Automation-Scripts/
-│   ├── complete_hardening.sh
-│   ├── security_verification.sh
-│   ├── continuous_monitoring.sh
-│   ├── backup_configuration.sh
-│   └── rollback_changes.sh
-├── 📂 11-Testing-Validation/
-│   ├── security_tests.md
-│   ├── test_ssh_security.sh
-│   ├── test_firewall.sh
-│   ├── test_password_policy.sh
-│   ├── nmap_port_scan.sh
-│   └── testing_results.md
-└── 📂 12-Conclusions-Learning/
-    ├── conclusions.md
-    ├── lessons_learned.md
-    ├── future_improvements.md
-    ├── complete_references.md
-    └── terminology_glossary.md
-```
-
----
-
-## 📚 Detailed Hardening Measures
-
-### <details>
-<summary><strong>1. User and Password Management</strong></summary>
-
-**Objective:** Implement access controls based on least privilege principles.
-
-**Contents:**
-- Least Privilege Principle
-- Secure user creation and deletion
-- Group and permission assignment
-- User system audit
-- Disabling unnecessary user accounts
-- Configuring sudo with restrictions
-- Administrative access monitoring
-- File permission management (/etc/passwd, /etc/shadow)
-
-**Generated Files:**
-- `user_management.md` - Complete user management guide
-- `password_policy.md` - Robust password policy
-- `users_scripts.sh` - Automation script
-- `users_audit.md` - Audit and verification
-
-**Tools:** useradd, userdel, usermod, sudo, lastlog, w
-
-</details>
-
-### <details>
-<summary><strong>2. Secure SSH Configuration</strong></summary>
-
-**Objective:** Secure remote access using SSH with robust cryptography.
-
-**Contents:**
-- SSH port change (non-standard)
-- Disable root login
-- Public/private key authentication
-- Disable password authentication
-- Session timeout configuration
-- Restriction of allowed users
-- Security banner configuration
-- Strong encryption
-- Failed access attempt monitoring
-- Fail2ban for brute force prevention
-
-**Generated Files:**
-- `ssh_hardening.md` - SSH hardening guide
-- `sshd_config_secure` - Optimized SSH config file
-- `key_generation.md` - Key generation procedure
-- `disable_root_login.md` - Root account security
-- `ssh_banner.txt` - Custom security banner
-
-**Tools:** SSH, ssh-keygen, sshd_config, ssh-copy-id, Fail2ban
-
-</details>
-
-### <details>
-<summary><strong>3. Automatic Security Updates</strong></summary>
-
-**Objective:** Keep system updated automatically against known vulnerabilities.
-
-**Contents:**
-- Unattended-upgrades configuration
-- Automatic kernel updates
-- Security repository configuration
-- Update notifications
-- Safe automatic reboots
-- Rollback of problematic updates
-- Audit of installed changes
-- Dependency management
-- Maintenance window scheduling
-
-**Generated Files:**
-- `automatic_updates.md` - Configuration guide
-- `unattended_upgrades.md` - Detailed configuration
-- `apt_configuration.md` - APT package management
-- `updates_monitoring.sh` - Monitoring script
-
-**Tools:** apt, unattended-upgrades, apt-listchanges, needrestart
-
-</details>
-
-### <details>
-<summary><strong>4. Firewall Configuration (UFW)</strong></summary>
-
-**Objective:** Control allowed and denied network traffic.
-
-**Contents:**
-- UFW installation and activation
-- Default policy (DENY incoming, ALLOW outgoing)
-- Selective port opening
-- Application-specific rules
-- Stateful and stateless rules
-- UFW logging and monitoring
-- Predefined application profiles
-- IP-based rules
-- IPv6 hardening
-- Fail2ban integration
-
-**Generated Files:**
-- `ufw_configuration.md` - Complete UFW guide
-- `ufw_rules.sh` - Rules application script
-- `ufw_profiles.md` - Predefined profiles
-- `ufw_logging.md` - Logging configuration
-- `ufw_advanced.md` - Advanced configuration
-
-**Tools:** UFW (Uncomplicated Firewall), iptables, ufw
-
-</details>
-
-### <details>
-<summary><strong>5. Password Policies with libpam-pwquality</strong></summary>
-
-**Objective:** Enforce strong passwords and complexity policies.
-
-**Contents:**
-- Libpam-pwquality installation
-- Minimum password requirements
-- Complexity (uppercase, lowercase, numbers, symbols)
-- Minimum and maximum length
-- Password reuse blocked
-- Real-time validation
-- Informative error messages
-- Exception for privileged users
-- Password change audit
-- Policy testing
-
-**Generated Files:**
-- `pam_pwquality_setup.md` - Installation guide
-- `common_password_config` - Configuration file
-- `password_requirements.md` - Requirements specification
-- `testing_policies.sh` - Validation script
-- `audit_password_policy.md` - Compliance audit
-
-**Tools:** libpam-pwquality, PAM, passwd, chpasswd
-
-</details>
-
-### <details>
-<summary><strong>6. File Integrity Monitoring with AIDE</strong></summary>
-
-**Objective:** Detect unauthorized changes to system files.
-
-**Contents:**
-- AIDE installation and configuration
-- Initial database creation
-- File monitoring definition
-- Periodic integrity verification
-- Change report generation
-- Automatic alerts on changes
-- Exclusion configuration
-- Performance optimization
-- Logging system integration
-- Change response procedures
-
-**Generated Files:**
-- `aide_installation.md` - Installation guide
-- `aide_config_basic` - Basic configuration
-- `aide_config_advanced` - Advanced configuration
-- `initialize_db.sh` - Initialization script
-- `verify_integrity.sh` - Verification script
-- `aide_alerts.md` - Alert system
-
-**Tools:** AIDE (Advanced Intrusion Detection Environment), cron, systemd
-
-</details>
-
-### <details>
-<summary><strong>7. Disable Unnecessary Modules and Services</strong></summary>
-
-**Objective:** Reduce attack surface by removing unnecessary components.
-
-**Contents:**
-- Audit of running services
-- Identification of unnecessary services
-- Safe service deactivation
-- Kernel module deactivation
-- Legacy daemon disabling
-- Functionality impact
-- Change documentation
-- Change rollback
-- Post-change monitoring
-- Dependency verification
-
-**Generated Files:**
-- `unnecessary_services.md` - List and analysis
-- `kernel_modules_disable.md` - Kernel modules
-- `disable_services.sh` - Automation script
-- `services_audit.md` - Complete audit
-- `performance_impact.md` - Impact analysis
-
-**Tools:** systemctl, modprobe, lsmod, service, chkconfig
-
-</details>
-
-### <details>
-<summary><strong>8. Security Audit with Lynis</strong></summary>
-
-**Objective:** Perform exhaustive system security audit.
-
-**Contents:**
-- Lynis installation
-- Full audit execution
-- Results interpretation and scoring
-- Hardening Index
-- Improvement suggestions
-- Detailed report generation
-- Scheduled audit execution
-- Results comparison over time
-- Critical weakness identification
-- Standards compliance tracking
-
-**Generated Files:**
-- `lynis_complete_guide.md` - Detailed guide
-- `lynis_installation.sh` - Installation script
-- `lynis_execution.md` - Execution procedure
-- `results_interpretation.md` - Results analysis
-- `lynis_hardening_index.md` - Hardening metrics
-- `lynis_report_example.txt` - Example report
-
-**Tools:** Lynis, bash, cron, grep, awk
-
-</details>
-
----
-
-## 🔧 Automation Scripts
-
-> [!NOTE]
-> Bash scripts included to automate the complete hardening process.
-
-### Main Scripts:
-
-| Script | Function | Description |
-|--------|----------|-------------|
-| `complete_hardening.sh` | Full automation | Applies all measures in sequence |
-| `security_verification.sh` | Validation | Verifies current security state |
-| `continuous_monitoring.sh` | Monitoring | Monitors anomalous behavior |
-| `backup_configuration.sh` | Backup | Performs backup before changes |
-| `rollback_changes.sh` | Recovery | Reverts changes if needed |
-
----
-
-## ✅ Applied Hardening Measures - Summary
-
-| Measure | Implemented | Priority | Verified |
-|---------|:------------:|:--------:|:--------:|
-| User management | ✅ | CRITICAL | ✅ |
-| SSH hardening | ✅ | CRITICAL | ✅ |
-| Automatic updates | ✅ | HIGH | ✅ |
-| UFW firewall | ✅ | CRITICAL | ✅ |
-| PAM PWQuality | ✅ | HIGH | ✅ |
-| AIDE integrity | ✅ | MEDIUM | ✅ |
-| Disable services | ✅ | MEDIUM | ✅ |
-| Lynis audit | ✅ | MEDIUM | ✅ |
-
----
-
-## > [!IMPORTANT]
-> **Before applying changes in production:**
-> - Perform complete system backup
-> - Document current configuration
-> - Test in staging environment
-> - Have physical access or recovery console
-> - Plan maintenance window
-> - Verify not blocking administrative access
-
----
-
-## 🔗 Tools and Resources Used
-
-> [!NOTE]
-> List of tools and reference sources for further learning.
-
-| Tool | Category | Description |
-|------|----------|-------------|
-| **SSH** | Remote Access | Secure remote access protocol |
-| **UFW** | Firewall | Simplified Linux firewall |
-| **PAM** | Authentication | Pluggable Authentication Modules |
-| **AIDE** | Integrity | Advanced Intrusion Detection |
-| **Lynis** | Audit | Security audit tool |
-| **Fail2ban** | Prevention | Brute force attack prevention |
-| **unattended-upgrades** | Updates | Automatic update manager |
-| **Auditd** | Logging | Kernel audit framework |
-
----
-
-## 💡 Developed Competencies
-
-```
-✓ Linux system hardening
-✓ Secure SSH configuration
-✓ Firewall management (UFW)
-✓ Password policies
-✓ File integrity monitoring
-✓ Security automation
-✓ System auditing
-✓ Bash scripting for security
-✓ Vulnerability identification
-✓ Risk analysis and mitigation
-```
-
----
-
-## 📊 Hardening Levels Achieved
-
-```
-Basic (Level 1)
-├── System updates
-├── Default password change
-└── Firewall activation
-
-Intermediate (Level 2)
-├── SSH configured
-├── Additional non-privileged users
-├── Unnecessary services disabled
-└── Password policies
-
-Advanced (Level 3)
-├── File integrity monitoring (AIDE)
-├── Auditd configured
-├── Fail2ban implemented
-├── Automatic updates
-└── Lynis audit ✅ ACHIEVED
-```
-
----
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00ff88,100:0d1117&height=200&section=footer&text=Master%20en%20Ciberseguridad%202025-2026&fontSize=30&fontColor=00ff88" alt="Footer" />
+### 🖥️ Project Profile
 
 <div align="center">
 
-**Created during Master's in Cybersecurity (2025/2026)**
+| Parameter | Value |
+|:---:|:---:|
+| 🖥️ System | `Linux (Debian/Ubuntu-based)` |
+| 🎯 Objective | `Maximum security hardening` |
+| 💼 Scope | `Server infrastructure protection` |
+| ⚠️ Context | `Production-ready · Compliance-driven · Zero-trust` |
+| 📋 Deliverable | `Comprehensive Linux Hardening Guide` |
 
-*Practical implementation of Linux hardening techniques*
+</div>
 
 ---
 
-### 📋 Folder Name for GitHub:
+### 🎯 Objectives
 
-**TAREA-2-TEMA-1-Bastionado-Linux**
+- [x] Implement secure user and password management practices
+- [x] Configure SSH for secure remote access with cryptographic authentication
+- [x] Deploy automatic security updates to maintain patch compliance
+- [x] Establish firewall rules using UFW (Uncomplicated Firewall)
+- [x] Enforce strong password policies using libpam-pwquality
+- [x] Monitor file integrity with AIDE (Advanced Intrusion Detection Environment)
+- [x] Disable unnecessary services and kernel modules to reduce attack surface
+- [x] Conduct comprehensive security audits using Lynis
+- [x] Validate hardening measures through security testing
 
-*or in English:*
+---
 
-**TASK-2-TOPIC-1-Linux-Hardening**
+### 🔐 The Eight Hardening Pillars
+
+<details>
+<summary><b>Pillar 1 — User and Password Management</b></summary>
+<br/>
+
+> [!IMPORTANT]
+> **Implement the principle of least privilege** — users should only have the minimum permissions required to perform their tasks.
+
+**Key actions for Linux hardening:**
+
+- Create non-root user accounts for daily administrative tasks
+- Disable the root account or restrict its access strictly
+- Implement sudo with granular permission controls
+- Audit user accounts and remove unnecessary system accounts
+- Monitor and log all administrative access
+- Enforce password complexity and expiration policies
+- Secure sensitive files (/etc/passwd, /etc/shadow, /etc/sudoers)
+
+**Tools:**
+```bash
+useradd, userdel, usermod, sudo, lastlog, w, audit
+```
+
+</details>
+
+<details>
+<summary><b>Pillar 2 — SSH Secure Configuration</b></summary>
+<br/>
+
+> [!IMPORTANT]
+> **SSH is the critical entry point** — misconfigurations can expose the entire system. Secure it with cryptographic keys and restrictive policies.
+
+**Key actions for Linux hardening:**
+
+- Change SSH port from default 22 to a non-standard port
+- Disable root login via SSH (`PermitRootLogin no`)
+- Implement public key authentication (RSA 4096-bit or Ed25519)
+- Disable password authentication (`PasswordAuthentication no`)
+- Configure session timeouts to prevent idle connections
+- Restrict SSH access by user/group (`AllowUsers` / `AllowGroups`)
+- Deploy SSH banners for legal warnings
+- Integrate Fail2ban for brute-force attack prevention
+- Enable verbose logging for audit trails
+- Configure strong cipher suites (AES-256-GCM, ChaCha20)
+
+**Key configuration (sshd_config):**
+```bash
+Port 2222
+PermitRootLogin no
+PasswordAuthentication no
+PubkeyAuthentication yes
+X11Forwarding no
+MaxAuthTries 3
+ClientAliveInterval 300
+ClientAliveCountMax 0
+```
+
+</details>
+
+<details>
+<summary><b>Pillar 3 — Automatic Security Updates</b></summary>
+<br/>
+
+> [!IMPORTANT]
+> **Patches are your first line of defence** — vulnerability disclosures happen constantly. Automate updates to ensure zero-day risk mitigation.
+
+**Key actions for Linux hardening:**
+
+- Enable unattended-upgrades for automatic security patches
+- Configure automatic kernel updates with safe restart policies
+- Subscribe to security repositories (Debian-security, Ubuntu-security)
+- Set up email notifications for failed or problematic updates
+- Test updates in a staging environment first
+- Define maintenance windows for non-critical updates
+- Monitor update logs and verify successful installations
+- Implement rollback procedures for failed updates
+
+**Key configuration (apt):**
+```bash
+APT::Periodic::Update-Package-Lists "1";
+APT::Periodic::Download-Upgradeable-Packages "1";
+APT::Periodic::AutocleanInterval "7";
+Unattended-Upgrade::Automatic-Reboot "true";
+Unattended-Upgrade::Automatic-Reboot-Time "03:00";
+```
+
+</details>
+
+<details>
+<summary><b>Pillar 4 — Firewall Configuration (UFW)</b></summary>
+<br/>
+
+> [!IMPORTANT]
+> **Default-deny, explicit-allow** — the firewall should reject all traffic by default and only permit what is explicitly needed.
+
+**Key actions for Linux hardening:**
+
+- Enable UFW and set default policy: DENY incoming, ALLOW outgoing
+- Open only essential ports (SSH, HTTP/HTTPS if applicable)
+- Implement stateful firewall rules (SYN-only, established connections)
+- Use UFW application profiles for predefined service rules
+- Restrict access by source IP when possible
+- Implement rate limiting to prevent DoS attacks
+- Enable UFW logging to audit firewall decisions
+- Regularly review and remove unused rules
+- Configure IPv6 firewall rules separately
+- Integrate with Fail2ban for dynamic blocking
+
+**Key rules:**
+```bash
+ufw default deny incoming
+ufw default allow outgoing
+ufw allow 2222/tcp    # SSH on custom port
+ufw allow 80/tcp      # HTTP (if needed)
+ufw allow 443/tcp     # HTTPS (if needed)
+```
+
+</details>
+
+<details>
+<summary><b>Pillar 5 — Password Policy Enforcement (PAM-PWQuality)</b></summary>
+<br/>
+
+> [!IMPORTANT]
+> **Strong passwords are non-negotiable** — implement libpam-pwquality to enforce complexity, length, and history requirements.
+
+**Key actions for Linux hardening:**
+
+- Install and configure libpam-pwquality
+- Define minimum password length (14+ characters recommended)
+- Require character diversity: uppercase, lowercase, digits, symbols
+- Prevent password reuse (history check)
+- Set password expiration policies (90 days for privileged users)
+- Implement account lockout after failed login attempts
+- Use real-time password validation
+- Exclude privileged accounts (e.g., root) from certain restrictions if necessary
+- Audit all password changes and failed login attempts
+- Test policies regularly to ensure effectiveness
+
+**Key configuration (common-password):**
+```bash
+password requisite pam_pwquality.so retry=3 minlen=14 dcredit=-1 ucredit=-1 lcredit=-1 ocredit=-1
+password [success=1 default=ignore] pam_unix.so obscure use_authtok try_first_pass yescrypt sha512 rounds=5000
+password requisite pam_deny.so
+password required pam_permit.so
+password required pam_unix.so remember=5 use_authtok try_first_pass yescrypt
+```
+
+</details>
+
+<details>
+<summary><b>Pillar 6 — File Integrity Monitoring (AIDE)</b></summary>
+<br/>
+
+> [!IMPORTANT]
+> **Detect tampering early** — AIDE continuously monitors system files for unauthorised modifications, alerting administrators to potential breaches.
+
+**Key actions for Linux hardening:**
+
+- Install AIDE and create an initial baseline database
+- Configure AIDE rules to monitor critical system files
+- Define a monitoring schedule (daily, weekly, or real-time)
+- Generate integrity reports and alerts on changes
+- Investigate all critical file modifications immediately
+- Store AIDE database and reports offsite or read-only
+- Exclude temporary files and log directories
+- Optimise database size for performance
+- Integrate AIDE with centralised logging (SIEM)
+- Implement automated response to detected changes
+
+**Key configuration (aide.conf):**
+```bash
+/bin			R+b+sha512
+/sbin			R+b+sha512
+/usr/bin		R+b+sha512
+/usr/sbin		R+b+sha512
+/lib			R+b+sha512
+/lib64			R+b+sha512
+/etc			R+b+sha512
+!/etc/ssl/private
+!/var/log
+!/var/cache
+```
+
+</details>
+
+<details>
+<summary><b>Pillar 7 — Disable Unnecessary Services & Kernel Modules</b></summary>
+<br/>
+
+> [!IMPORTANT]
+> **Reduce attack surface** — every service running is a potential vulnerability. Disable anything not explicitly required.
+
+**Key actions for Linux hardening:**
+
+- Audit all installed packages and running services
+- Document which services are essential for operations
+- Disable unnecessary daemons (cups, avahi, bluetooth, etc.)
+- Disable unnecessary kernel modules (USB, firewire, bluetooth, etc.)
+- Use systemctl to mask services permanently
+- Blacklist kernel modules in /etc/modprobe.d/
+- Test functionality after each removal
+- Maintain a change log for rollback purposes
+- Monitor system performance post-hardening
+- Verify no critical dependencies are broken
+
+**Common services to disable:**
+```
+cups (printing)
+avahi-daemon (mDNS)
+bluetooth
+iscsid (iSCSI)
+rpcbind (NFS)
+snmpd (SNMP)
+```
+
+**Common kernel modules to disable:**
+```
+usb-storage
+firewire
+bluetooth
+binfmt_misc (optional)
+```
+
+</details>
+
+<details>
+<summary><b>Pillar 8 — Comprehensive Security Audit (Lynis)</b></summary>
+<br/>
+
+> [!IMPORTANT]
+> **Measure to improve** — Lynis provides a holistic security assessment, identifying gaps and prioritising remediation efforts.
+
+**Key actions for Linux hardening:**
+
+- Install Lynis from official repositories
+- Run full system audit in detailed mode
+- Review all warnings, suggestions, and informational findings
+- Calculate Hardening Index score (higher is better)
+- Address critical and high-priority findings first
+- Schedule quarterly or bi-annual Lynis audits
+- Track Hardening Index improvement over time
+- Integrate Lynis into CI/CD pipelines for baseline validation
+- Generate audit reports for management and compliance
+- Use Lynis output to validate implementation of hardening measures
+
+**Lynis audit command:**
+```bash
+sudo lynis audit system --quiet --quick
+sudo lynis audit system --forensics
+sudo lynis generate report
+```
+
+</details>
+
+---
+
+### 📂 Document Structure
+
+```
+TAREA-2-TEMA-1-Bastionado-Linux/
+├── 📄 README.md                                ←  This document
+├── 📂 1-Introduccion/
+│   ├── introduction_hardening.md
+│   └── key_concepts.md
+├── 📂 2-Gestion-Usuarios-Contrasenas/
+│   ├── user_management.md
+│   ├── password_policy.md
+│   └── scripts_usuarios.sh
+├── 📂 3-Configuracion-SSH/
+│   ├── ssh_hardening.md
+│   ├── sshd_config_seguro
+│   └── ssh_banner.txt
+├── 📂 4-Actualizaciones-Automaticas/
+│   ├── automatic_updates.md
+│   └── unattended_upgrades.conf
+├── 📂 5-Cortafuegos-UFW/
+│   ├── ufw_configuration.md
+│   └── ufw_rules.sh
+├── 📂 6-PAM-PWQuality/
+│   ├── pam_pwquality_setup.md
+│   └── common_password_config
+├── 📂 7-AIDE/
+│   ├── aide_installation.md
+│   ├── aide.conf
+│   └── verify_integrity.sh
+├── 📂 8-Desactivacion-Servicios/
+│   ├── services_to_disable.md
+│   └── disable_services.sh
+├── 📂 9-Lynis/
+│   ├── lynis_guide.md
+│   └── lynis_audit.sh
+└── 📂 10-Scripts-Automatizacion/
+    ├── hardening_complete.sh
+    └── security_verification.sh
+```
+
+---
+
+### 📖 Key Concepts
+
+> [!NOTE]
+> **Hardening** — The process of configuring an operating system or application with security best practices to reduce vulnerabilities and attack surface.
+
+> [!NOTE]
+> **Principle of Least Privilege** — Users and services should only have the minimum permissions necessary to perform their intended functions.
+
+> [!NOTE]
+> **SSH (Secure Shell)** — Cryptographic network protocol for secure remote login and command execution, replacing insecure protocols like Telnet.
+
+> [!NOTE]
+> **UFW (Uncomplicated Firewall)** — A user-friendly interface to iptables, designed to simplify firewall configuration on Linux systems.
+
+> [!NOTE]
+> **AIDE (Advanced Intrusion Detection Environment)** — File integrity monitoring tool that detects unauthorised modifications to system files.
+
+> [!NOTE]
+> **Lynis** — Comprehensive security auditing tool that identifies vulnerabilities and misconfigurations in Linux systems.
+
+---
+
+### ✅ Expected Deliverables
+
+A complete Linux hardening implementation must include:
+- ✅ Secure user and password management configuration
+- ✅ SSH hardened configuration with key-based authentication
+- ✅ Automatic security update mechanism activated
+- ✅ UFW firewall with restrictive rulesets deployed
+- ✅ PAM-PWQuality password policy enforced
+- ✅ AIDE baseline database created and monitoring active
+- ✅ Unnecessary services and modules disabled with documentation
+- ✅ Lynis audit completed with Hardening Index score
+- ✅ Security testing validation results
+- ✅ Comprehensive documentation and runbooks
+
+---
+
+### ⚠️ Important Notes
+
+- **Test in a non-production environment first** — hardening changes can impact functionality
+- **Maintain physical or console access** — avoid being locked out of SSH
+- **Document all changes** — enable easy rollback if issues arise
+- **Automate where possible** — use scripts to ensure consistency across multiple systems
+- **Monitor continuously** — hardening is not a one-time activity; adapt to new threats
+- **Compliance matters** — ensure hardening aligns with RGPD, ENS, and ISO 27001 requirements
+
+---
+
+---
+
+<!-- ============================================================ -->
+<!--                    VERSIÓN EN ESPAÑOL                        -->
+<!-- ============================================================ -->
+
+<a name="version-espanol"></a>
+
+<div align="center">
+<h1>🔒 Tarea 2 — Tema 1: Bastionado de Sistemas Linux</h1>
+<p><i>Bastionado de Sistemas Linux siguiendo Guías de Políticas de Segurización</i></p>
+</div>
+
+### 📋 Descripción General
+
+> **Bastionado de Sistemas Linux** es un conjunto integral de medidas de seguridad aplicadas a sistemas operativos Linux para aumentar su resiliencia frente a amenazas cibernéticas y acceso no autorizado. En un panorama digital acelerado, asegurar la capa de infraestructura es fundamental para cualquier organización que maneje datos sensibles o servicios críticos. Este ejercicio práctico cubre la implementación de técnicas de bastionado alineadas con las mejores prácticas de seguridad y marcos normativos de cumplimiento.
+
+---
+
+### 🖥️ Perfil del Proyecto
+
+<div align="center">
+
+| Parámetro | Valor |
+|:---:|:---:|
+| 🖥️ Sistema | `Linux (basado en Debian/Ubuntu)` |
+| 🎯 Objetivo | `Máxima seguridad de bastionado` |
+| 💼 Alcance | `Protección de infraestructura de servidores` |
+| ⚠️ Contexto | `Listo para producción · Cumplimiento normativo · Zero-trust` |
+| 📋 Entregable | `Guía Completa de Bastionado Linux` |
+
+</div>
+
+---
+
+### 🎯 Objetivos
+
+- [x] Implementar prácticas seguras de gestión de usuarios y contraseñas
+- [x] Configurar SSH para acceso remoto seguro con autenticación criptográfica
+- [x] Desplegar actualizaciones automáticas de seguridad para mantener cumplimiento de parches
+- [x] Establecer reglas de cortafuegos usando UFW (Uncomplicated Firewall)
+- [x] Reforzar políticas de contraseña usando libpam-pwquality
+- [x] Monitorear integridad de ficheros con AIDE (Advanced Intrusion Detection Environment)
+- [x] Desactivar servicios y módulos innecesarios para reducir superficie de ataque
+- [x] Realizar auditorías exhaustivas de seguridad usando Lynis
+- [x] Validar medidas de bastionado mediante pruebas de seguridad
+
+---
+
+### 🔐 Los Ocho Pilares de Bastionado
+
+<details>
+<summary><b>Pilar 1 — Gestión de Usuarios y Contraseñas</b></summary>
+<br/>
+
+> [!IMPORTANT]
+> **Implementar el principio de mínimo privilegio** — los usuarios deben tener solo los permisos mínimos necesarios para realizar sus tareas.
+
+**Acciones clave para bastionado Linux:**
+
+- Crear cuentas de usuario no-root para tareas administrativas diarias
+- Desactivar la cuenta root o restringir su acceso estrictamente
+- Implementar sudo con controles de permisos granulares
+- Auditar cuentas de usuario y eliminar cuentas del sistema innecesarias
+- Monitorear y registrar todos los accesos administrativos
+- Enforcer políticas de complejidad y expiración de contraseña
+- Asegurar ficheros sensibles (/etc/passwd, /etc/shadow, /etc/sudoers)
+
+**Herramientas:**
+```bash
+useradd, userdel, usermod, sudo, lastlog, w, audit
+```
+
+</details>
+
+<details>
+<summary><b>Pilar 2 — Configuración Segura de SSH</b></summary>
+<br/>
+
+> [!IMPORTANT]
+> **SSH es el punto de entrada crítico** — las misconfigurations pueden exponer todo el sistema. Asegúralo con claves criptográficas y políticas restrictivas.
+
+**Acciones clave para bastionado Linux:**
+
+- Cambiar puerto SSH del 22 por defecto a un puerto no estándar
+- Desactivar login root vía SSH (`PermitRootLogin no`)
+- Implementar autenticación por clave pública (RSA 4096-bit o Ed25519)
+- Desactivar autenticación por contraseña (`PasswordAuthentication no`)
+- Configurar timeouts de sesión para prevenir conexiones idle
+- Restringir acceso SSH por usuario/grupo (`AllowUsers` / `AllowGroups`)
+- Desplegar banners SSH para advertencias legales
+- Integrar Fail2ban para prevención de ataques de fuerza bruta
+- Habilitar logging detallado para auditoría
+- Configurar suites de cifrado fuertes (AES-256-GCM, ChaCha20)
+
+**Configuración clave (sshd_config):**
+```bash
+Port 2222
+PermitRootLogin no
+PasswordAuthentication no
+PubkeyAuthentication yes
+X11Forwarding no
+MaxAuthTries 3
+ClientAliveInterval 300
+ClientAliveCountMax 0
+```
+
+</details>
+
+<details>
+<summary><b>Pilar 3 — Actualizaciones Automáticas de Seguridad</b></summary>
+<br/>
+
+> [!IMPORTANT]
+> **Los parches son tu primera línea de defensa** — las divulgaciones de vulnerabilidades ocurren constantemente. Automatiza actualizaciones para mitigar riesgo zero-day.
+
+**Acciones clave para bastionado Linux:**
+
+- Habilitar unattended-upgrades para parches de seguridad automáticos
+- Configurar actualizaciones automáticas del kernel con políticas de reinicio seguro
+- Suscribirse a repositorios de seguridad (Debian-security, Ubuntu-security)
+- Configurar notificaciones por correo electrónico para fallos o actualizaciones problemáticas
+- Probar actualizaciones en entorno de staging primero
+- Definir ventanas de mantenimiento para actualizaciones no críticas
+- Monitorear logs de actualización y verificar instalaciones exitosas
+- Implementar procedimientos de rollback para actualizaciones fallidas
+
+**Configuración clave (apt):**
+```bash
+APT::Periodic::Update-Package-Lists "1";
+APT::Periodic::Download-Upgradeable-Packages "1";
+APT::Periodic::AutocleanInterval "7";
+Unattended-Upgrade::Automatic-Reboot "true";
+Unattended-Upgrade::Automatic-Reboot-Time "03:00";
+```
+
+</details>
+
+<details>
+<summary><b>Pilar 4 — Configuración de Cortafuegos (UFW)</b></summary>
+<br/>
+
+> [!IMPORTANT]
+> **Default-deny, explicit-allow** — el cortafuegos debe rechazar todo tráfico por defecto y solo permitir lo explícitamente necesario.
+
+**Acciones clave para bastionado Linux:**
+
+- Habilitar UFW y establecer política por defecto: DENY entrada, ALLOW salida
+- Abrir solo puertos esenciales (SSH, HTTP/HTTPS si aplica)
+- Implementar reglas de cortafuegos stateful (SYN-only, conexiones establecidas)
+- Usar perfiles de aplicación UFW para reglas predefinidas
+- Restringir acceso por IP de origen cuando sea posible
+- Implementar rate limiting para prevenir ataques DoS
+- Habilitar logging de UFW para auditar decisiones del cortafuegos
+- Revisar regularmente y eliminar reglas no utilizadas
+- Configurar reglas de cortafuegos IPv6 por separado
+- Integrar con Fail2ban para bloqueo dinámico
+
+**Reglas clave:**
+```bash
+ufw default deny incoming
+ufw default allow outgoing
+ufw allow 2222/tcp    # SSH en puerto custom
+ufw allow 80/tcp      # HTTP (si es necesario)
+ufw allow 443/tcp     # HTTPS (si es necesario)
+```
+
+</details>
+
+<details>
+<summary><b>Pilar 5 — Enforcing Políticas de Contraseña (PAM-PWQuality)</b></summary>
+<br/>
+
+> [!IMPORTANT]
+> **Las contraseñas fuertes son innegociables** — implementa libpam-pwquality para enforcer requisitos de complejidad, longitud e historial.
+
+**Acciones clave para bastionado Linux:**
+
+- Instalar y configurar libpam-pwquality
+- Definir longitud mínima de contraseña (14+ caracteres recomendados)
+- Requerir diversidad de caracteres: mayúsculas, minúsculas, dígitos, símbolos
+- Prevenir reutilización de contraseñas (verificación de historial)
+- Establecer políticas de expiración de contraseña (90 días para usuarios privilegiados)
+- Implementar bloqueo de cuenta tras intentos de login fallidos
+- Usar validación de contraseña en tiempo real
+- Excluir cuentas privilegiadas (ej. root) de ciertas restricciones si es necesario
+- Auditar todos los cambios de contraseña e intentos de login fallidos
+- Probar políticas regularmente para garantizar efectividad
+
+**Configuración clave (common-password):**
+```bash
+password requisite pam_pwquality.so retry=3 minlen=14 dcredit=-1 ucredit=-1 lcredit=-1 ocredit=-1
+password [success=1 default=ignore] pam_unix.so obscure use_authtok try_first_pass yescrypt sha512 rounds=5000
+password requisite pam_deny.so
+password required pam_permit.so
+password required pam_unix.so remember=5 use_authtok try_first_pass yescrypt
+```
+
+</details>
+
+<details>
+<summary><b>Pilar 6 — Monitoreo de Integridad de Ficheros (AIDE)</b></summary>
+<br/>
+
+> [!IMPORTANT]
+> **Detecta manipulación temprano** — AIDE monitorea continuamente ficheros del sistema para detectar modificaciones no autorizadas, alertando a administradores sobre posibles brechas.
+
+**Acciones clave para bastionado Linux:**
+
+- Instalar AIDE y crear base de datos baseline inicial
+- Configurar reglas de AIDE para monitorear ficheros críticos del sistema
+- Definir calendario de monitoreo (diario, semanal, o en tiempo real)
+- Generar reportes de integridad y alertas en cambios
+- Investigar inmediatamente todas las modificaciones de ficheros críticos
+- Almacenar base de datos y reportes de AIDE offsite o read-only
+- Excluir ficheros temporales y directorios de logs
+- Optimizar tamaño de base de datos para rendimiento
+- Integrar AIDE con logging centralizado (SIEM)
+- Implementar respuesta automatizada a cambios detectados
+
+**Configuración clave (aide.conf):**
+```bash
+/bin			R+b+sha512
+/sbin			R+b+sha512
+/usr/bin		R+b+sha512
+/usr/sbin		R+b+sha512
+/lib			R+b+sha512
+/lib64			R+b+sha512
+/etc			R+b+sha512
+!/etc/ssl/private
+!/var/log
+!/var/cache
+```
+
+</details>
+
+<details>
+<summary><b>Pilar 7 — Desactivar Servicios y Módulos Innecesarios</b></summary>
+<br/>
+
+> [!IMPORTANT]
+> **Reduce superficie de ataque** — cada servicio ejecutándose es una potencial vulnerabilidad. Desactiva lo que no sea explícitamente requerido.
+
+**Acciones clave para bastionado Linux:**
+
+- Auditar todos los paquetes instalados y servicios en ejecución
+- Documentar qué servicios son esenciales para operaciones
+- Desactivar daemons innecesarios (cups, avahi, bluetooth, etc.)
+- Desactivar módulos innecesarios del kernel (USB, firewire, bluetooth, etc.)
+- Usar systemctl para enmascarar servicios permanentemente
+- Blacklist módulos del kernel en /etc/modprobe.d/
+- Probar funcionalidad después de cada eliminación
+- Mantener changelog de cambios para rollback
+- Monitorear rendimiento del sistema post-bastionado
+- Verificar que no se rompan dependencias críticas
+
+**Servicios comunes a desactivar:**
+```
+cups (impresión)
+avahi-daemon (mDNS)
+bluetooth
+iscsid (iSCSI)
+rpcbind (NFS)
+snmpd (SNMP)
+```
+
+**Módulos comunes del kernel a desactivar:**
+```
+usb-storage
+firewire
+bluetooth
+binfmt_misc (opcional)
+```
+
+</details>
+
+<details>
+<summary><b>Pilar 8 — Auditoría Exhaustiva de Seguridad (Lynis)</b></summary>
+<br/>
+
+> [!IMPORTANT]
+> **Mide para mejorar** — Lynis proporciona una evaluación holística de seguridad, identificando gaps y priorizando esfuerzos de remediación.
+
+**Acciones clave para bastionado Linux:**
+
+- Instalar Lynis desde repositorios oficiales
+- Ejecutar auditoría completa del sistema en modo detallado
+- Revisar todas las advertencias, sugerencias y hallazgos informativos
+- Calcular puntuación Hardening Index (mayor es mejor)
+- Abordar primero hallazgos críticos y de alta prioridad
+- Programar auditorías Lynis trimestrales o biestrales
+- Rastrear mejora de Hardening Index a lo largo del tiempo
+- Integrar Lynis en pipelines CI/CD para validación de baseline
+- Generar reportes de auditoría para management y cumplimiento
+- Usar salida de Lynis para validar implementación de medidas de bastionado
+
+**Comando auditoría Lynis:**
+```bash
+sudo lynis audit system --quiet --quick
+sudo lynis audit system --forensics
+sudo lynis generate report
+```
+
+</details>
+
+---
+
+### 📂 Estructura de Documentos
+
+```
+TAREA-2-TEMA-1-Bastionado-Linux/
+├── 📄 README.md                                ←  Este documento
+├── 📂 1-Introduccion/
+│   ├── introduccion_bastionado.md
+│   └── conceptos_clave.md
+├── 📂 2-Gestion-Usuarios-Contrasenas/
+│   ├── gestion_usuarios.md
+│   ├── politica_contrasenas.md
+│   └── scripts_usuarios.sh
+├── 📂 3-Configuracion-SSH/
+│   ├── ssh_hardening.md
+│   ├── sshd_config_seguro
+│   └── ssh_banner.txt
+├── 📂 4-Actualizaciones-Automaticas/
+│   ├── actualizaciones_automaticas.md
+│   └── unattended_upgrades.conf
+├── 📂 5-Cortafuegos-UFW/
+│   ├── ufw_configuracion.md
+│   └── reglas_ufw.sh
+├── 📂 6-PAM-PWQuality/
+│   ├── pam_pwquality_setup.md
+│   └── common_password_config
+├── 📂 7-AIDE/
+│   ├── aide_instalacion.md
+│   ├── aide.conf
+│   └── verificacion_integridad.sh
+├── 📂 8-Desactivacion-Servicios/
+│   ├── servicios_desactivar.md
+│   └── desactivar_servicios.sh
+├── 📂 9-Lynis/
+│   ├── lynis_guia.md
+│   └── lynis_audit.sh
+└── 📂 10-Scripts-Automatizacion/
+    ├── bastionado_completo.sh
+    └── verificacion_seguridad.sh
+```
+
+---
+
+### 📖 Conceptos Clave
+
+> [!NOTE]
+> **Bastionado** — El proceso de configurar un sistema operativo o aplicación con mejores prácticas de seguridad para reducir vulnerabilidades y superficie de ataque.
+
+> [!NOTE]
+> **Principio de Mínimo Privilegio** — Los usuarios y servicios deben tener solo los permisos mínimos necesarios para realizar sus funciones previstas.
+
+> [!NOTE]
+> **SSH (Secure Shell)** — Protocolo de red criptográfico para login remoto seguro y ejecución de comandos, reemplazando protocolos inseguros como Telnet.
+
+> [!NOTE]
+> **UFW (Uncomplicated Firewall)** — Interfaz amigable para iptables, diseñada para simplificar configuración de cortafuegos en sistemas Linux.
+
+> [!NOTE]
+> **AIDE (Advanced Intrusion Detection Environment)** — Herramienta de monitoreo de integridad de ficheros que detecta modificaciones no autorizadas en ficheros del sistema.
+
+> [!NOTE]
+> **Lynis** — Herramienta exhaustiva de auditoría de seguridad que identifica vulnerabilidades y misconfigurations en sistemas Linux.
+
+---
+
+### ✅ Entregables Esperados
+
+Una implementación completa de bastionado Linux debe incluir:
+- ✅ Configuración segura de gestión de usuarios y contraseñas
+- ✅ Configuración SSH bastionada con autenticación basada en clave
+- ✅ Mecanismo de actualización automática de seguridad activado
+- ✅ Cortafuegos UFW con rulesets restrictivos desplegado
+- ✅ Política de contraseña PAM-PWQuality enforzada
+- ✅ Base de datos baseline de AIDE creada y monitoreo activo
+- ✅ Servicios y módulos innecesarios desactivados con documentación
+- ✅ Auditoría Lynis completada con puntuación Hardening Index
+- ✅ Resultados de validación de pruebas de seguridad
+- ✅ Documentación exhaustiva y runbooks
+
+---
+
+### ⚠️ Consideraciones Importantes
+
+- **Prueba en entorno no-producción primero** — los cambios de bastionado pueden impactar funcionalidad
+- **Mantén acceso físico o de consola** — evita quedar bloqueado de SSH
+- **Documenta todos los cambios** — habilita fácil rollback si surgen problemas
+- **Automatiza donde sea posible** — usa scripts para garantizar consistencia entre múltiples sistemas
+- **Monitorea continuamente** — bastionado no es una actividad puntual; adapta a nuevas amenazas
+- **La cumplimentación importa** — asegura que bastionado se alinea con RGPD, ENS e ISO 27001
+
+---
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00ff88,50:1a1f2e,100:0d1117&height=120&section=footer" width="100%"/>
+
+*Master's in Cybersecurity — System Security / Linux Hardening*
+
+*Máster en Ciberseguridad — Seguridad de Sistemas / Bastionado Linux*
 
 </div>
