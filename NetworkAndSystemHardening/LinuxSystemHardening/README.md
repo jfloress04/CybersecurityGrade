@@ -420,7 +420,8 @@ A complete Linux hardening implementation must include:
 - **Compliance matters** — ensure hardening aligns with RGPD, ENS, and ISO 27001 requirements
 
 ---
-
+Link to project documentation:
+https://docs.google.com/document/d/1bec5kop_ICTYHs7LGbvEqWlTM75Hc8Ap0wx5DWdPS08/edit?usp=sharing
 ---
 
 <!-- ============================================================ -->
@@ -817,6 +818,8 @@ Una implementación completa de bastionado Linux debe incluir:
 - **Monitorea continuamente** — bastionado no es una actividad puntual; adapta a nuevas amenazas
 - **La cumplimentación importa** — asegura que bastionado se alinea con RGPD, ENS e ISO 27001
 
+Link al documento del proyecto:
+https://docs.google.com/document/d/1bec5kop_ICTYHs7LGbvEqWlTM75Hc8Ap0wx5DWdPS08/edit?usp=sharing
 ---
 
 <div align="center">
